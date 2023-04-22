@@ -4,22 +4,22 @@
 
 	export let data: Data[];
 	let activeDays: string[] = [];
+	const currentWeekDay = new Date()
+		.toLocaleString("en-US", { weekday: "short" })
+		.toLowerCase();
 
 	// Find the day with the highest amount
-	$: max = data.reduce(
-		(acc, { amount, day }) => {
-			if (amount > acc.amount) {
-				return { amount: amount, day };
-			}
-			return acc;
-		},
-		{ amount: 0, day: "" }
-	);
+	$: max = data.reduce((acc, { amount, day }) => {
+		if (amount > acc) {
+			return amount;
+		}
+		return acc;
+	}, 0);
 
 	// Calculate the percentage of each day (will be used to set the height of the bar)
 	$: parsed = data.map((d) => ({
 		...d,
-		percent: Math.round((d.amount / max.amount) * 100),
+		percent: Math.round((d.amount / max) * 100),
 	}));
 
 	function toggleActiveDay(day: string) {
@@ -36,9 +36,10 @@
 	{#each parsed as { day, percent, amount }, i}
 		<div class="chart-item">
 			<button
-				on:click={() => toggleActiveDay(day)}
+				on:mouseenter={() => toggleActiveDay(day)}
+				on:mouseleave={() => toggleActiveDay(day)}
 				class="chart-item__bar"
-				class:max={day === max.day}
+				class:current={day === currentWeekDay}
 				class:active={activeDays.includes(day)}
 				style="height: {percent}%"
 				tabindex={i + 1}
@@ -80,7 +81,7 @@
 		border-width: 0;
 	}
 
-	.chart-item__bar.max {
+	.chart-item__bar.current {
 		background-color: var(--color-primary-cyan);
 	}
 
