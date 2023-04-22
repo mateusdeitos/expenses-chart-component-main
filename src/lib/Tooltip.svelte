@@ -3,12 +3,12 @@
 	export let show = false;
 </script>
 
-<h5 class:fade-in={show}>
+<p class:fade-in={show}>
 	{text}
-</h5>
+</p>
 
 <style>
-	h5 {
+	p {
 		position: absolute;
 		top: -30px;
 		font-size: 12px;
@@ -21,9 +21,10 @@
 		padding: 4px 8px;
 		transition: 0.5s ease-in-out;
 		opacity: 0;
+		font-weight: 700;
 	}
 
-	h5::after {
+	p::after {
 		content: "";
 		position: absolute;
 		top: 100%;
@@ -33,7 +34,7 @@
 		border-top-color: #000;
 	}
 
-	h5.fade-in {
+	p.fade-in {
 		opacity: 1;
 	}
 </style>
