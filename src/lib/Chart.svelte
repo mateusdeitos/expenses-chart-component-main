@@ -36,6 +36,7 @@
 	{#each parsed as { day, percent, amount }}
 		<div class="chart-item">
 			<button
+				type="button"
 				on:mouseenter={() => toggleActiveDay(day)}
 				on:mouseleave={() => toggleActiveDay(day)}
 				on:focus={() => toggleActiveDay(day)}
