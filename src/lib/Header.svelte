@@ -1,4 +1,5 @@
 <script lang="ts">
+	import logo from "../../images/logo.svg";
 	export let balance: string;
 </script>
 
@@ -7,7 +8,7 @@
 		<h5>My balance</h5>
 		<p>{balance}</p>
 	</section>
-	<img src="./images/logo.svg" alt="" />
+	<img src={logo} alt="Expenses App Logo" />
 </header>
 
 <style>
