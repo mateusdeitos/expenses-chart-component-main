@@ -17,7 +17,7 @@
 		align-items: center;
 		background-color: var(--color-primary-red);
 		width: 100%;
-		padding: 16px;
+		padding: 24px;
 		border-radius: 16px;
 	}
 

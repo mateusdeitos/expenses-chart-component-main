@@ -46,7 +46,7 @@
 			>
 				<Tooltip text={amount} show={activeDays.includes(day)} />
 			</button>
-			<h5>{day}</h5>
+			<h5 class="day">{day}</h5>
 		</div>
 	{/each}
 </section>
@@ -58,7 +58,7 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		width: 100%;
-		height: 250px;
+		height: 100px;
 		gap: 8px;
 		padding-top: 24px;
 	}
@@ -89,10 +89,12 @@
 		filter: brightness(1.2);
 	}
 
-	h5 {
+	h5.day {
 		font-size: 10px;
 		font-style: normal;
 		font-weight: 400;
 		margin-bottom: 8px;
+		color: #a9a9a9;
+		margin: 8px 0 0 0;
 	}
 </style>

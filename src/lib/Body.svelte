@@ -18,15 +18,19 @@
 		background-color: #fff;
 		border-radius: 16px;
 		width: 100%;
-		padding: 16px;
+		padding: 24px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		align-items: center;
+	}
+
+	h3 {
+		margin: 0 0 16px 0;
 	}
 
 	hr {
 		width: 100%;
 		border: 1px solid #e5e5e5;
+		margin: 24px 0;
 	}
 </style>
