@@ -9,10 +9,10 @@
 	}).format(921.48);
 </script>
 
-<div class="container">
+<main class="container">
 	<Header {balance} />
 	<Body {data} />
-</div>
+</main>
 
 <style>
 	.container {

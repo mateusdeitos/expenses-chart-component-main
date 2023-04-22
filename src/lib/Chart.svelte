@@ -33,16 +33,18 @@
 </script>
 
 <section class="chart-container">
-	{#each parsed as { day, percent, amount }, i}
+	{#each parsed as { day, percent, amount }}
 		<div class="chart-item">
 			<button
 				on:mouseenter={() => toggleActiveDay(day)}
 				on:mouseleave={() => toggleActiveDay(day)}
+				on:focus={() => toggleActiveDay(day)}
+				on:blur={() => toggleActiveDay(day)}
 				class="chart-item__bar"
 				class:current={day === currentWeekDay}
 				class:active={activeDays.includes(day)}
 				style="height: {percent}%"
-				tabindex={i + 1}
+				tabindex={0}
 			>
 				<Tooltip text={amount} show={activeDays.includes(day)} />
 			</button>
